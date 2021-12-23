@@ -10,6 +10,8 @@ all: build execute
 
 build: prep $(BUILD_DIR)/test
 
+cleanBuild: clean build execute
+
 $(BUILD_DIR)/test: $(BUILD_DIR)/test.o $(BUILD_DIR)/b_tree.o
 	$(CC) $(CFLAGS) $(BUILD_DIR)/test.o $(BUILD_DIR)/b_tree.o -o $(BUILD_DIR)/test
 
