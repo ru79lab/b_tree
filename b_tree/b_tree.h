@@ -3,27 +3,36 @@
 
 typedef struct keys {
     int *data;
-    int size;
-    int capacity;
+    int filled;
 } KEYS;
 
-typedef union node {
+typedef struct node {
     KEYS keys;
     KEYS *left;
     KEYS *right;
 } NODE;
 
-typedef union b_tree
+typedef struct b_tree
 {
     NODE *root;
     int height;
+    int default_key;
+    int capacity;
 } TREE;
 
-TREE * 
-new_b_tree(int min_size_of_key_array, int default_key);
+void
+create(TREE *instance_of_b_tree, int min_size_of_key_array, int default_key);
+
+NODE *
+create_node();
+
+void 
+init_keys(KEYS *keys, int capacity, int default_key);
 
 void
 destroy(TREE *instance);
+
+void print_b_tree(TREE *instance);
 
 
 
