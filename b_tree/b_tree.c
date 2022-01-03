@@ -2,14 +2,14 @@
 #include <stdlib.h>
 #include "b_tree.h"
 
-
+// A. creation and initialization
 void 
-create (TREE *instance_of_b_tree, int min_size_of_key_array, int default_key){
-    instance_of_b_tree->height = 0;
-    instance_of_b_tree->default_key = default_key;
-    instance_of_b_tree->capacity = min_size_of_key_array * 2;
+create (TREE *self, int min_size_of_key_array, int default_key){
+    self->height = 0;
+    self->default_key = default_key;
+    self->capacity = min_size_of_key_array * 2;
 
-    instance_of_b_tree->root = create_node(instance_of_b_tree);
+    self->root = create_node(self);
 }
 
 NODE *
@@ -24,27 +24,35 @@ create_node(TREE *t){
 }
 
 void 
-init_keys(KEYS *keys, int capacity, int default_key){
-    keys->data = malloc(sizeof(int) * capacity);
-    keys->filled = 0;
-    
-    int i = 0;
-    for(; i < capacity; i++){
-        keys->data[i] = default_key;
+init_keys(FS_ARRAY *keys, int capacity, int default_key){
+    create_array(keys, capacity, default_key);
+}
+/******************************************************************************************************************************/
+// B. logic
+void 
+add(TREE *self, int key){
+    if(self->height == 1){
+        node_add(&(self->root->keys), key, &binary_search);
     }
 }
 
-
-void
-destroy(TREE *instance){
-    free(instance->root->keys.data);
-    free(instance->root);
-    free(instance);
+void 
+node_add(FS_ARRAY *target, int key, void (*algorithm)(FS_ARRAY *t, int k, int start, int end)){
+    (*algorithm)(target, key, 0, target->filled);
 }
-
-void print_b_tree(TREE *instance){
-    if(instance->height == 0){
-        printf("initialized tree: R [%i : %i] L [null] R [null]",instance->default_key, instance->capacity);
+/******************************************************************************************************************************/
+// C. cleaning
+void
+destroy(TREE *self){
+    free(self->root->keys.data);
+    free(self->root);
+    free(self);
+}
+/******************************************************************************************************************************/
+// D. helpers
+void print_b_tree(TREE *self){
+    if(self->height == 0){
+        printf("initialized tree: R [%i : %i] L [null] R [null]",self->default_key, self->capacity);
     }
 }
 

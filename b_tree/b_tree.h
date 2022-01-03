@@ -1,15 +1,13 @@
 #ifndef B_TREE
 #define B_TREE
 
-typedef struct keys {
-    int *data;
-    int filled;
-} KEYS;
+#include "array.h"
+#include "insertion_algorithms.h"
 
 typedef struct node {
-    KEYS keys;
-    KEYS *left;
-    KEYS *right;
+    FS_ARRAY keys;
+    FS_ARRAY *left;
+    FS_ARRAY *right;
 } NODE;
 
 typedef struct b_tree
@@ -20,21 +18,28 @@ typedef struct b_tree
     int capacity;
 } TREE;
 
+// A. creation and initialization
 void
-create(TREE *instance_of_b_tree, int min_size_of_key_array, int default_key);
+create(TREE *self, int min_size_of_key_array, int default_key);
 
 NODE *
 create_node();
 
 void 
-init_keys(KEYS *keys, int capacity, int default_key);
-
+init_keys(FS_ARRAY *keys, int capacity, int default_key);
+/******************************************************************************************************************************/
+// B. logic
 void
-destroy(TREE *instance);
+add(TREE *self, int key);
 
-void print_b_tree(TREE *instance);
-
-
-
+void 
+node_add(FS_ARRAY *target, int key, void (*algorithm)(FS_ARRAY *t, int k));
+/******************************************************************************************************************************/
+// C. cleaning
+void
+destroy(TREE *self);
+/******************************************************************************************************************************/
+// D. helpers
+void print_b_tree(TREE *self);
 
 #endif // B_TREE

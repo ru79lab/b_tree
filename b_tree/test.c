@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include "b_tree.h"
+#include "array.h"
+#include "insertion_algorithms.h"
 
 int main(){
     TREE t;
@@ -12,6 +14,10 @@ int main(){
     }
 
     printf("\n");
+
+    print_b_tree(&t);
+
+    add($t, 5);
 
     print_b_tree(&t);
 

@@ -13,12 +13,18 @@ build: prep $(BUILD_DIR)/test
 cleanBuild: clean build execute
 
 $(BUILD_DIR)/test: $(BUILD_DIR)/test.o $(BUILD_DIR)/b_tree.o
-	$(CC) $(CFLAGS) $(BUILD_DIR)/test.o $(BUILD_DIR)/b_tree.o -o $(BUILD_DIR)/test
+	$(CC) $(CFLAGS) $(BUILD_DIR)/test.o $(BUILD_DIR)/b_tree.o $(BUILD_DIR)/insertion_algorithms.o $(BUILD_DIR)/array.o -o $(BUILD_DIR)/test
 
-$(BUILD_DIR)/test.o: test.c $(BUILD_DIR)/b_tree.o b_tree.h
+$(BUILD_DIR)/test.o: test.c $(BUILD_DIR)/b_tree.o b_tree.h 
 	$(compile)
 
-$(BUILD_DIR)/b_tree.o: b_tree.c b_tree.h
+$(BUILD_DIR)/b_tree.o: b_tree.c b_tree.h insertion_algorithms.h array.h $(BUILD_DIR)/array.o $(BUILD_DIR)/insertion_algorithms.o
+	$(compile)
+
+$(BUILD_DIR)/insertion_algorithms.o: insertion_algorithms.c insertion_algorithms.h array.h $(BUILD_DIR)/array.o
+	$(compile)
+
+$(BUILD_DIR)/array.o: array.c array.h
 	$(compile)
 
 prep: 
