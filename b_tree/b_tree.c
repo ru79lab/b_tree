@@ -13,12 +13,12 @@ create (TREE *self, int min_size_of_key_array, int default_key){
 }
 
 NODE *
-create_node(TREE *t){
+create_node(TREE *self){
     NODE *n = malloc(sizeof(NODE));
     n->left = NULL;
     n->right = NULL;
 
-    init_keys(&(n->keys), t->capacity, t->default_key);
+    init_keys(&(n->keys), self->capacity, self->default_key);
 
     return n;
 }
@@ -37,7 +37,7 @@ add(TREE *self, int key){
 }
 
 void 
-node_add(FS_ARRAY *target, int key, void (*algorithm)(FS_ARRAY *t, int k, int start, int end)){
+node_add(FS_ARRAY *target, int key, void (*algorithm)(FS_ARRAY *self, int k, int start, int end)){
     (*algorithm)(target, key, 0, target->filled);
 }
 /******************************************************************************************************************************/
@@ -50,9 +50,48 @@ destroy(TREE *self){
 }
 /******************************************************************************************************************************/
 // D. helpers
-void print_b_tree(TREE *self){
+void 
+print_b_tree(TREE *self){
     if(self->height == 0){
-        printf("initialized tree: R [%i : %i] L [null] R [null]",self->default_key, self->capacity);
+        print_empty_tree(self);
+    } else if(self->height > 0){
+        print_filled_tree(TREE *self);
+    } else {
+        printf("ERROR: [print_b_tree] undefined tree height: %i", self->height);
     }
 }
+
+void 
+print_empty_tree(TREE *self) {
+    printf("initialized tree: R [%i : %i] L [null] R [null]",self->default_key, self->capacity);
+}
+
+void 
+print_filled_tree(TREE *self) {
+    print_tree_info(self);
+    print_tree(self->root);
+}
+
+void 
+print_tree_info(TREE *self){
+    printf("filled tree: {%i, %i}",self->height, self->capacity);
+}
+
+void 
+print_tree(NODE *sub_tree){
+    if(sub_tree->left == NULL && sub_tree->right == NULL){
+        print_node(&(sub_tree->keys));
+    } else {
+        print_node(&(sub_tree->keys));
+        print_tree(sub_tree->left);
+        print_tree(sub_tree->right);
+    }
+}
+
+void 
+print_node(FS_ARRAY *key){
+    print_array(key);
+}
+
+
 

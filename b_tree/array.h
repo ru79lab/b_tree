@@ -21,4 +21,7 @@ insert(FS_ARRAY *self, int elem, int at);
 int 
 move_and_insert(FS_ARRAY *self, int elem, int at);
 
+void
+print_array(FS_ARRAY *self);
+
 #endif // FIXED_SIZE_ARRAY

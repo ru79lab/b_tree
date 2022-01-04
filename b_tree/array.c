@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "array.h"
 
 void 
@@ -43,4 +44,16 @@ move_and_insert(FS_ARRAY *self, int elem, int at){
 
     self->data[at] = elem;
     return 1;
+}
+
+void
+print_array(FS_ARRAY *self){
+    // repr: [ data[0], data[1], ... , data[self->filled - 1] ]
+    printf("[ ");
+    
+    for (int i = 1; self->filled - 1; i++){
+        printf("%c, ", self->data[i]);
+    }
+
+    printf("%c ]", self->data[self->filled - 1]);
 }
