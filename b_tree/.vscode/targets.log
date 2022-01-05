@@ -1,0 +1,485 @@
+make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 3.82
+# Built for i686-pc-mingw32
+# Copyright (C) 2010  Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+ 
+
+# Make data base, printed on Wed Jan 05 11:22:59 2022
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# environment
+OMP_WAIT_POLICY = PASSIVE
+# default
+.SHELLFLAGS := -c
+# makefile
+MAKEFLAGS = Rrqp
+# environment
+VSCODE_LOG_NATIVE = false
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+HOMEDRIVE = C:
+# automatic
+@F = $(notdir $@)
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# makefile
+CURDIR := c:/Users/jacob/Projects/2021/trees/b_tree
+# default
+SHELL := sh.exe
+# environment
+WINDIR = C:\WINDOWS
+# environment
+VSCODE_NLS_CONFIG = {"locale":"de","availableLanguages":{},"_languagePackSupport":true}
+# makefile (from `Makefile', line 2)
+CFLAGS = -g -Wall -Wextra -Werror
+# environment
+ONEDRIVE = C:\Users\jacob\NG Branch Technology GmbH
+# environment
+NG1_HOME = C:\Program Files\NG1 Kiosk\
+# environment
+PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW
+# makefile (from `Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# environment
+SCITE_HOME = C:\ProgramData\SciTE
+# environment
+TMP = C:\Users\jacob\AppData\Local\Temp
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+PROGRAMW6432 = C:\Program Files
+# environment
+PROGRAMDATA = C:\ProgramData
+# environment
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-38b17de9-9f95-4b6f-ba3f-06b569d1e086-sock
+# environment
+VSCODE_CWD = C:\Users\jacob\AppData\Local\Programs\Microsoft VS Code
+# environment
+PATH = C:\Program Files (x86)\VMware\VMware Workstation\bin\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\PuTTY\;C:\Program Files\Git\cmd;C:\Tools\SysinternalsSuite;C:\MinGW\bin;C:\Program Files\dotnet\;C:\Program Files (x86)\ProAKT\;C:\Users\jacob\flutter\.pub-cache\bin;C:\Program Files\TortoiseGit\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\riscv64-unknown-elf-gcc-10.1.0-2020.08.2-x86_64-w64-mingw32\riscv64-unknown-elf-gcc-10.1.0-2020.08.2-x86_64-w64-mingw32\bin;C:\Program Files (x86)\p-nand-q.com\GTools;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx64\x64\;C:\Users\jacob\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\Scripts;C:\Users\jacob\.cargo\bin;C:\Users\jacob\AppData\Local\Microsoft\WindowsApps;C:\Users\jacob\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\jacob\AppData\Roaming\cabal\bin;C:\ProgramData\chocolatey\lib\ghc\tools\ghc-8.10.2\bin;C:\users\jacob\flutter\bin;C:\Users\jacob\.dotnet\tools;C:\Users\jacob\AppData\Local\Programs\MiKTeX\miktex\bin\x64\;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.3\bin;C:\tools\msys64;C:\SysGCC\ra 
+spberry\bin;C:\Users\jacob\go\bin
+# environment
+COMMONPROGRAMW6432 = C:\Program Files\Common Files
+# environment
+ZES_ENABLE_SYSMAN = 1
+# environment
+CHOCOLATEYLASTPATHUPDATE = 132824192567574030
+# environment
+PROCESSOR_ARCHITECTURE = x86
+# environment
+USERPROFILE = C:\Users\jacob
+# environment
+CHOCOLATEYINSTALL = C:\ProgramData\chocolatey
+# environment
+ALLUSERSPROFILE = C:\ProgramData
+# environment
+GOPATH = C:\Users\jacob\go
+# environment
+VSCODE_LOG_STACK = false
+# environment
+NUMBER_OF_PROCESSORS = 12
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine archives
+# automatic
+%F = $(notdir $%)
+# environment
+SCITE_USERHOME = C:\Users\jacob\AppData\Roaming\SciTE
+# environment
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_19912_BSLUJSMUYSDKVBPT
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+COMPUTERNAME = DESKTOP-IFJDUPU
+# environment
+PROGRAMFILES = C:\Program Files (x86)
+# environment
+DRIVERDATA = C:\Windows\System32\Drivers\DriverData
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# environment
+USERNAME = jacob
+# environment
+PUBLIC = C:\Users\Public
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
+# environment
+CHOCOLATEYTOOLSLOCATION = C:\tools
+# environment
+VSCODE_CODE_CACHE_PATH = C:\Users\jacob\AppData\Roaming\Code\CachedData\899d46d82c4c95423fb7e10e68eba52050e30ba3
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# environment
+COMMONPROGRAMFILES = C:\Program Files (x86)\Common Files
+# environment
+LOGONSERVER = \\DESKTOP-IFJDUPU
+# environment
+ONEDRIVECONSUMER = C:\Users\jacob\OneDrive
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# environment
+USERDOMAIN = DESKTOP-IFJDUPU
+# environment
+MAKELEVEL := 0
+# environment
+INTELLIJ IDEA COMMUNITY EDITION = C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.3\bin;
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# makefile (from `Makefile', line 7)
+compile = $(CC) $(CFLAGS) -c $< -o $@
+# makefile (from `Makefile', line 1)
+CC = gcc
+# environment
+JAVA_HOME = C:\Program Files\Java\jdk-17.0.1
+# makefile (from `Makefile', line 4)
+BUILD_DIR = build
+# environment
+ONEDRIVECOMMERCIAL = C:\Users\jacob\NG Branch Technology GmbH
+# default
+MAKE_VERSION := 3.82
+# makefile
+.DEFAULT_GOAL := all
+# environment
+PROGRAMFILES(X86) = C:\Program Files (x86)
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+VCTARGETSPATH = C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\
+# environment
+LOCALAPPDATA = C:\Users\jacob\AppData\Local
+# environment
+PSMODULEPATH = C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules;
+# default
+MAKE_COMMAND := make.exe
+# environment
+PROCESSOR_ARCHITEW6432 = AMD64
+# environment
+EXE4J_JAVA_HOME = C:\Program Files (x86)\ProAKT\CINEO\jre
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# environment
+PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 158 Stepping 10, GenuineIntel
+# environment
+OS = Windows_NT
+# environment
+VSCODE_IPC_HOOK = \\.\pipe\ea075160054524950c367df978b0f1f0-1.63.2-main-sock
+# environment
+NG1_CONFIG = C:\Program Files\NG1 Kiosk\config
+# environment
+KMP_BLOCKTIME = 0
+# environment
+HOMEPATH = \Users\jacob
+# environment
+COMMONPROGRAMFILES(X86) = C:\Program Files (x86)\Common Files
+# environment
+PROMPT = $P$G
+# environment
+MFLAGS = -Rrqp
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+SYSTEMROOT = C:\WINDOWS
+# environment
+_MSYS2_PREFIX = x86_64
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+NG1_DATA = C:\ProgramData\NG1 Kiosk\
+# automatic
++F = $(notdir $+)
+# environment
+APPDATA = C:\Users\jacob\AppData\Roaming
+# environment
+TEMP = C:\Users\jacob\AppData\Local\Temp
+# environment
+COMSPEC = C:\WINDOWS\system32\cmd.exe
+# default
+MAKEFILES := 
+# automatic
+<F = $(notdir $<)
+# makefile (from `Makefile', line 3)
+EXECUTABLE = test
+# environment
+LC_ALL = C
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# environment
+SYSTEMDRIVE = C:
+# environment
+SESSIONNAME = Console
+# environment
+PROCESSOR_REVISION = 9e0a
+# default
+.RECIPEPREFIX := 
+# environment
+_MSYS2_BASH = C:\tools\msys64\usr\bin\bash.exe
+# environment
+LANG = C
+# environment
+PROCESSOR_LEVEL = 6
+# environment
+VSCODE_PID = 19912
+# environment
+USERDOMAIN_ROAMINGPROFILE = DESKTOP-IFJDUPU
+# variable set hash-table stats:
+# Load=113/1024=11%, Rehash=0, Collisions=11/146=8%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# \Program Files (x86)\NVIDIA Corporation\PhysX\Commo 
+n;C: could not be stat'd.
+# \SysGCC\raspberry\bin;C: could not be stat'd.
+# \MinGW\bin;C: could not be stat'd.
+# \Program Files\Git\cmd;C: could not be stat'd.
+# \Windows\System32\OpenSSH\;C: could not be stat'd.
+# \Tools\SysinternalsSuite;C: could not be stat'd.
+# \Users\jacob\AppData\Local\Microsoft\WindowsApps;C: could not be stat'd.
+# \Users\jacob\go\bin: could not be stat'd.
+# \Users\jacob\flutter\.pub-cache\bin;C: could not be stat'd.
+# . (key c:/Users/jacob/Projects/2021/trees/b_tree, mtime 1641378155): 13 files, no impossibilities.
+# \Windows;C: could not be stat'd.
+# \WINDOWS\System32\Wbem;C: could not be stat'd.
+# C: could not be stat'd.
+# \Users\jacob\AppData\Local\Programs\Microsoft VS Code\bin;C: could not be stat'd.
+# \Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx64\x64\;C: could not be stat'd.
+# \ProgramData\chocolatey\lib\ghc\tools\ghc-8.10.2\bin;C: could not be stat'd.
+# \Windows\System32\Wbem;C: could not be stat'd.
+# \Users\jacob\.dotnet\tools;C: could not be stat'd.
+# \Program Files\Microsoft SQL Server\130\Tools\Binn\;C: could not be stat'd.
+# \Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.3\bin;C: could not be stat'd.
+# \Program Files\Common Files\Oracle\Java\javapath;C: could not be stat'd.
+# \WINDOWS\System32\WindowsPowerShell\v1.0\;C: could not be stat'd.
+# \Users\jacob\.cargo\bin;C: could not be stat'd.
+# \tools\msys64;C: could not be stat'd.
+# \Program Files\dotnet\;C: could not be stat'd.
+# \Program Files\TortoiseGit\bin;C: could not be stat'd.
+# \WINDOWS\System32\OpenSSH\;C: could not be stat'd.
+# \WINDOWS\system32;C: could not be stat'd.
+# \Program Files (x86)\VMware\VMware Workstation\bin\;C: could not be stat'd.
+# \Program Files\PuTTY\;C: could not be stat'd.
+# \riscv64-unknown-elf-gcc-10.1.0-2020.08.2-x86_64-w64-mingw32\riscv64-unknown-elf-gcc-10.1.0-2020.08.2-x86_64-w64-mingw32\bin;C: could not be stat'd.
+# \Users\jacob\AppData\Local\Programs\MiKTeX\miktex\bin\x64\;C: could not be stat'd.
+# \Windows\system32;C: could not be stat'd.
+# \Users\jacob\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\Scripts;C: could not be stat'd.
+# \Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C: could not be stat'd.
+# \Windows\System32\WindowsPowerShell\v1.0\;C: could not be stat'd.
+# \WINDOWS;C: could not be stat'd.
+# \Program Files (x86)\p-nand-q.com\GTools;C: could not be stat'd.
+# \Program Files (x86)\ProAKT\;C: could not be stat'd.
+# \users\jacob\flutter\bin;C: could not be stat'd.
+# \Users\jacob\AppData\Roaming\cabal\bin;C: could not be stat'd.
+
+# 13 files, no impossibilities in 41 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+# Not a target:
+array.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/insertion_algorithms.o: insertion_algorithms.c insertion_algorithms.h array.h common_def.h build/array.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from `Makefile', line 25):
+	$(compile)
+
+all: build execute
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/3=0%
+
+# Not a target:
+b_tree.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+array.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/b_tree.o: b_tree.c b_tree.h insertion_algorithms.h array.h common_def.h build/array.o build/insertion_algorithms.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from `Makefile', line 22):
+	$(compile)
+
+prep:
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: `'
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := prep
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := 
+# automatic
+# | := 
+# automatic
+# < := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/11=9%
+#  recipe to execute (from `Makefile', line 31):
+	mkdir build
+
+# Not a target:
+b_tree.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.SUFFIXES:
+#  I 
+mplicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-05 11:22:31
+#  File has been updated.
+#  Successfully updated.
+
+build/test.o: test.c build/b_tree.o b_tree.h common_def.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from `Makefile', line 19):
+	$(compile)
+
+build/test: build/test.o build/b_tree.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from `Makefile', line 16):
+	$(CC) $(CFLAGS) $(BUILD_DIR)/test.o $(BUILD_DIR)/b_tree.o $(BUILD_DIR)/insertion_algorithms.o $(BUILD_DIR)/array.o -o $(BUILD_DIR)/test
+
+build: prep build/test
+#  Implicit rule search has been done.
+#  Last modified 2022-01-05 11:22:36
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/3=0%
+
+cleanBuild: clean build execute
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+execute:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from `Makefile', line 34):
+	./$(BUILD_DIR)/$(EXECUTABLE).exe
+
+# Not a target:
+common_def.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+test.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+clean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from `Makefile', line 37):
+	rm -rf $(BUILD_DIR)/*.o $(BUILD_DIR)/$(EXECUTABLE).exe
+	rmdir $(BUILD_DIR)
+
+# Not a target:
+insertion_algorithms.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+insertion_algorithms.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/array.o: array.c array.h common_def.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from `Makefile', line 28):
+	$(compile)
+
+# files hash-table stats:
+# Load=22/1024=2%, Rehash=0, Collisions=0/71=0%
+# VPATH Search Paths
+
+# No `vpath' search paths.
+
+# No general (`VPATH' variable) search path.
+
+# # of strings in strcache: 0 / lookups = 110 / hits = 110
+# # of strcache buffers: 1 (* 8176 B/buffer = 8176 B)
+# strcache used: total = 0 (1892) / max = 0 / min = 8176 / avg = 0
+# strcache free: total = 0 (6284) / max = 0 / min = 8176 / avg = 0
+
+# strcache hash-table stats:
+# Load=65/8192=1%, Rehash=0, Collisions=1/110=1%
+# Finished Make data base on Wed Jan 05 11:22:59 2022
+
+ 

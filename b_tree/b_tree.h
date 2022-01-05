@@ -3,6 +3,7 @@
 
 #include "array.h"
 #include "insertion_algorithms.h"
+#include "common_def.h"
 
 typedef struct node {
     FS_ARRAY keys;
@@ -33,7 +34,7 @@ void
 add(TREE *self, int key);
 
 void 
-node_add(FS_ARRAY *target, int key, void (*algorithm)(FS_ARRAY *t, int k, int start, int end));
+node_add(FS_ARRAY *target, int key, int (*algorithm)(FS_ARRAY *t, int k, int start, int end));
 /******************************************************************************************************************************/
 // C. cleaning
 void

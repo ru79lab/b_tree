@@ -17,7 +17,7 @@ int main(){
 
     print_b_tree(&t);
 
-    add($t, 5);
+    add(&t, 5);
 
     print_b_tree(&t);
 

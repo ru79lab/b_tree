@@ -1,6 +1,8 @@
 #ifndef FIXED_SIZE_ARRAY
 #define FIXED_SIZE_ARRAY
 
+#include "common_def.h"
+
 enum array_error{
     UNITIALIZED,
     INDEX_OUT_OF_BOUNDS

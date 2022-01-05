@@ -43,6 +43,7 @@ move_and_insert(FS_ARRAY *self, int elem, int at){
     }
 
     self->data[at] = elem;
+    self->filled += 1;
     return 1;
 }
 
@@ -51,9 +52,9 @@ print_array(FS_ARRAY *self){
     // repr: [ data[0], data[1], ... , data[self->filled - 1] ]
     printf("[ ");
     
-    for (int i = 1; self->filled - 1; i++){
+    for (int i = 1; i < self->filled - 1; i++){
         printf("%c, ", self->data[i]);
     }
 
-    printf("%c ]", self->data[self->filled - 1]);
+    printf("%i ]", self->data[self->filled - 1]);
 }

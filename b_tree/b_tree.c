@@ -31,13 +31,14 @@ init_keys(FS_ARRAY *keys, int capacity, int default_key){
 // B. logic
 void 
 add(TREE *self, int key){
-    if(self->height == 1){
+    if(self->height == 0){
         node_add(&(self->root->keys), key, &binary_search);
+        self->height += 1;
     }
 }
 
-void 
-node_add(FS_ARRAY *target, int key, void (*algorithm)(FS_ARRAY *self, int k, int start, int end)){
+void  
+node_add(FS_ARRAY *target, int key, int (*algorithm)(FS_ARRAY *self, int k, int start, int end)){
     (*algorithm)(target, key, 0, target->filled);
 }
 /******************************************************************************************************************************/
@@ -55,7 +56,7 @@ print_b_tree(TREE *self){
     if(self->height == 0){
         print_empty_tree(self);
     } else if(self->height > 0){
-        print_filled_tree(TREE *self);
+        print_filled_tree(self);
     } else {
         printf("ERROR: [print_b_tree] undefined tree height: %i", self->height);
     }
@@ -63,7 +64,7 @@ print_b_tree(TREE *self){
 
 void 
 print_empty_tree(TREE *self) {
-    printf("initialized tree: R [%i : %i] L [null] R [null]",self->default_key, self->capacity);
+    printf("initialized tree: R [%i : %i] L [null] R [null]\n",self->default_key, self->capacity);
 }
 
 void 
@@ -74,7 +75,7 @@ print_filled_tree(TREE *self) {
 
 void 
 print_tree_info(TREE *self){
-    printf("filled tree: {%i, %i}",self->height, self->capacity);
+    printf("filled tree: {height: %i, capacity: %i}\n",self->height, self->capacity);
 }
 
 void 
@@ -91,7 +92,9 @@ print_tree(NODE *sub_tree){
 void 
 print_node(FS_ARRAY *key){
     print_array(key);
+    printf("\n");
 }
+
 
 
 

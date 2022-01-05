@@ -1,0 +1,8 @@
+make.exe --dry-run --keep-going --print-directory
+make.exe: Entering directory `c:/Users/jacob/Projects/2021/trees/b_tree'
+mkdir build
+ 
+gcc -g -Wall -Wextra -Werror build/test.o build/b_tree.o build/insertion_algorithms.o build/array.o -o build/test
+./build/test.exe
+make.exe: Leaving directory `c:/Users/jacob/Projects/2021/trees/b_tree'
+ 
