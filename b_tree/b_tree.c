@@ -70,7 +70,7 @@ print_empty_tree(TREE *self) {
 void 
 print_filled_tree(TREE *self) {
     print_tree_info(self);
-    print_tree(self->root);
+    print_tree(self->root, self->capacity / 2 );
 }
 
 void 
@@ -79,18 +79,20 @@ print_tree_info(TREE *self){
 }
 
 void 
-print_tree(NODE *sub_tree){
+print_tree(NODE *sub_tree,  int location){
     if(sub_tree->left == NULL && sub_tree->right == NULL){
-        print_node(&(sub_tree->keys));
+        print_node(&(sub_tree->keys), location);
     } else {
-        print_node(&(sub_tree->keys));
-        print_tree(sub_tree->left);
-        print_tree(sub_tree->right);
+        print_node(&(sub_tree->keys), location);
+        print_tree(sub_tree->left, location--);
+        print_tree(sub_tree->right, sub_tree->right->keys.filled + location++);
     }
 }
 
 void 
-print_node(FS_ARRAY *key){
+print_node(FS_ARRAY *key,  int location){
+    for(int i = 0; i < location; i++)
+        printf(" ");
     print_array(key);
     printf("\n");
 }

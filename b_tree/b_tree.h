@@ -54,9 +54,9 @@ void
 print_tree_info(TREE *self);
 
 void 
-print_tree(NODE *sub_tree);
+print_tree(NODE *sub_tree,  int location);
 
 void 
-print_node(FS_ARRAY *key);
+print_node(FS_ARRAY *key,  int location);
 
 #endif // B_TREE
