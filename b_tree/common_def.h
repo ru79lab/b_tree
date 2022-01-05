@@ -4,6 +4,7 @@
 #include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h> 
 
 #ifndef DEBUG_BUILD
     #define _DEBUG(fmt, args...) printf("[ %s %s %d ] "fmt, __FILE__, __FUNCTION__, __LINE__, args) 

@@ -10,18 +10,28 @@ enum array_error{
 
 typedef struct fixed_size_array {
     int *data;
-    int length;
     int filled;
+    int default_key;
+    int capacity;
 } FS_ARRAY;
 
 void 
-create_array(FS_ARRAY *self, int length, int default_elem);
+create_array(FS_ARRAY *self, int default_elem, int capacity);
 
 int 
 insert(FS_ARRAY *self, int elem, int at);
 
 int 
 move_and_insert(FS_ARRAY *self, int elem, int at);
+
+void 
+debug_array(FS_ARRAY *self);
+
+void 
+print_array_info(FS_ARRAY *self);
+
+void 
+print_hidden_array(FS_ARRAY *self);
 
 void
 print_array(FS_ARRAY *self);

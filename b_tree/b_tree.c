@@ -4,22 +4,18 @@
 
 // A. creation and initialization
 void 
-create (TREE *self, int min_size_of_key_array, int default_key){
+create_b_tree (TREE *self, int min_size_of_key_array, int default_key){
     self->height = 0;
-    self->default_key = default_key;
-    self->capacity = min_size_of_key_array * 2;
-
-    self->root = create_node(self);
+    self->root = create_node(min_size_of_key_array * 2, default_key);
 }
 
 NODE *
-create_node(TREE *self){
+create_node(int min_size_of_key_array, int default_key){
     NODE *n = malloc(sizeof(NODE));
     n->left = NULL;
     n->right = NULL;
 
-    init_keys(&(n->keys), self->capacity, self->default_key);
-
+    init_keys(&(n->keys), min_size_of_key_array, default_key);
     return n;
 }
 
@@ -34,6 +30,15 @@ add(TREE *self, int key){
     if(self->height == 0){
         node_add(&(self->root->keys), key, &binary_search);
         self->height += 1;
+        return;
+    }
+
+    if(self->root->keys.filled < self->root->keys.capacity){
+        node_add(&(self->root->keys), key, &binary_search);
+        return;
+    } else {
+        printf("UNIMPLEMENTED ADD\n");
+        return;
     }
 }
 
@@ -64,18 +69,18 @@ print_b_tree(TREE *self){
 
 void 
 print_empty_tree(TREE *self) {
-    printf("initialized tree: R [%i : %i] L [null] R [null]\n",self->default_key, self->capacity);
+    printf("initialized tree: R [default_key: %i : capacity: %i] L [null] R [null]\n",self->root->keys.capacity, self->root->keys.default_key);
 }
 
 void 
 print_filled_tree(TREE *self) {
     print_tree_info(self);
-    print_tree(self->root, self->capacity / 2 );
+    print_tree(self->root, self->root->keys.capacity / 2 );
 }
 
 void 
 print_tree_info(TREE *self){
-    printf("filled tree: {height: %i, capacity: %i}\n",self->height, self->capacity);
+    printf("filled tree: {height: %i, capacity: %i}\n",self->height, self->root->keys.capacity);
 }
 
 void 

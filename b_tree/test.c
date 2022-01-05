@@ -3,25 +3,44 @@
 #include "array.h"
 #include "insertion_algorithms.h"
 
+#define MIN_KEY_ARRAY_SIZE 2
+#define DEFAULT_KEY 0
+
 int main(){
+    printf("B_TREE TEST\n\n");
     TREE t;
-    create(&t, 2, 0);
 
-    printf("after create: h: %d; d: %d\n", t.height, t.default_key);
+    printf("testing tree creation: \n\n");
+    create_b_tree(&t, MIN_KEY_ARRAY_SIZE, DEFAULT_KEY);
+    print_b_tree(&t);
+    FS_ARRAY root_data = t.root->keys;
+    debug_array(&root_data);
 
-    for(int i = 0; i < t.capacity; i++){
-         printf("pos %d : %d;",i, t.root->keys.data[0]);
-    }
-
-    printf("\n");
-
+    printf("testing add to empty tree: \n\n");
+    add(&t, 5);
     print_b_tree(&t);
 
-    add(&t, 5);
+    printf("testing add to root smaller: \n");
+    add(&t, 4);
+    print_b_tree(&t);
 
+    printf("testing add to root equal: \n");
+    add(&t, 4);
+    print_b_tree(&t);
+
+
+    printf("testing add to root bigger: \n");
+
+    add(&t, 7);
+    print_b_tree(&t);
+
+    printf("testing add full root: \n");
+
+    add(&t, 7);
     print_b_tree(&t);
 
     destroy(&t);
+    exit(0);
 
     return 0;
 }

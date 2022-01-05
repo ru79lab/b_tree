@@ -7,7 +7,7 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # There is NO WARRANTY, to the extent permitted by law.
  
 
-# Make data base, printed on Wed Jan 05 11:22:59 2022
+# Make data base, printed on Wed Jan 05 15:18:42 2022
 
 # Variables
 
@@ -50,7 +50,8 @@ NG1_HOME = C:\Program Files\NG1 Kiosk\
 # environment
 PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW
 # makefile (from `Makefile', line 1)
-MAKEFILE_LIST :=  Makefile
+MAKEFILE_LIST : 
+=  Makefile
 # environment
 SCITE_HOME = C:\ProgramData\SciTE
 # environment
@@ -66,8 +67,7 @@ VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-38b17de9-9f95-4b6f-ba3f-06b569d1e0
 # environment
 VSCODE_CWD = C:\Users\jacob\AppData\Local\Programs\Microsoft VS Code
 # environment
-PATH = C:\Program Files (x86)\VMware\VMware Workstation\bin\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\PuTTY\;C:\Program Files\Git\cmd;C:\Tools\SysinternalsSuite;C:\MinGW\bin;C:\Program Files\dotnet\;C:\Program Files (x86)\ProAKT\;C:\Users\jacob\flutter\.pub-cache\bin;C:\Program Files\TortoiseGit\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\riscv64-unknown-elf-gcc-10.1.0-2020.08.2-x86_64-w64-mingw32\riscv64-unknown-elf-gcc-10.1.0-2020.08.2-x86_64-w64-mingw32\bin;C:\Program Files (x86)\p-nand-q.com\GTools;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx64\x64\;C:\Users\jacob\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\Scripts;C:\Users\jacob\.cargo\bin;C:\Users\jacob\AppData\Local\Microsoft\WindowsApps;C:\Users\jacob\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\jacob\AppData\Roaming\cabal\bin;C:\ProgramData\chocolatey\lib\ghc\tools\ghc-8.10.2\bin;C:\users\jacob\flutter\bin;C:\Users\jacob\.dotnet\tools;C:\Users\jacob\AppData\Local\Programs\MiKTeX\miktex\bin\x64\;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.3\bin;C:\tools\msys64;C:\SysGCC\ra 
-spberry\bin;C:\Users\jacob\go\bin
+PATH = C:\Program Files (x86)\VMware\VMware Workstation\bin\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\PuTTY\;C:\Program Files\Git\cmd;C:\Tools\SysinternalsSuite;C:\MinGW\bin;C:\Program Files\dotnet\;C:\Program Files (x86)\ProAKT\;C:\Users\jacob\flutter\.pub-cache\bin;C:\Program Files\TortoiseGit\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\riscv64-unknown-elf-gcc-10.1.0-2020.08.2-x86_64-w64-mingw32\riscv64-unknown-elf-gcc-10.1.0-2020.08.2-x86_64-w64-mingw32\bin;C:\Program Files (x86)\p-nand-q.com\GTools;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx64\x64\;C:\Users\jacob\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\Scripts;C:\Users\jacob\.cargo\bin;C:\Users\jacob\AppData\Local\Microsoft\WindowsApps;C:\Users\jacob\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\jacob\AppData\Roaming\cabal\bin;C:\ProgramData\chocolatey\lib\ghc\tools\ghc-8.10.2\bin;C:\users\jacob\flutter\bin;C:\Users\jacob\.dotnet\tools;C:\Users\jacob\AppData\Local\Programs\MiKTeX\miktex\bin\x64\;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.3\bin;C:\tools\msys64;C:\SysGCC\raspberry\bin;C:\Users\jacob\go\bin
 # environment
 COMMONPROGRAMW6432 = C:\Program Files\Common Files
 # environment
@@ -175,7 +175,8 @@ EXE4J_JAVA_HOME = C:\Program Files (x86)\ProAKT\CINEO\jre
 # environment
 PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 158 Stepping 10, GenuineIntel
 # environment
-OS = Windows_NT
+OS 
+ = Windows_NT
 # environment
 VSCODE_IPC_HOOK = \\.\pipe\ea075160054524950c367df978b0f1f0-1.63.2-main-sock
 # environment
@@ -247,8 +248,7 @@ USERDOMAIN_ROAMINGPROFILE = DESKTOP-IFJDUPU
 
 # Directories
 
-# \Program Files (x86)\NVIDIA Corporation\PhysX\Commo 
-n;C: could not be stat'd.
+# \Program Files (x86)\NVIDIA Corporation\PhysX\Common;C: could not be stat'd.
 # \SysGCC\raspberry\bin;C: could not be stat'd.
 # \MinGW\bin;C: could not be stat'd.
 # \Program Files\Git\cmd;C: could not be stat'd.
@@ -257,7 +257,7 @@ n;C: could not be stat'd.
 # \Users\jacob\AppData\Local\Microsoft\WindowsApps;C: could not be stat'd.
 # \Users\jacob\go\bin: could not be stat'd.
 # \Users\jacob\flutter\.pub-cache\bin;C: could not be stat'd.
-# . (key c:/Users/jacob/Projects/2021/trees/b_tree, mtime 1641378155): 13 files, no impossibilities.
+# . (key c:/Users/jacob/Projects/2021/trees/b_tree, mtime 1641392306): 12 files, no impossibilities.
 # \Windows;C: could not be stat'd.
 # \WINDOWS\System32\Wbem;C: could not be stat'd.
 # C: could not be stat'd.
@@ -287,10 +287,11 @@ n;C: could not be stat'd.
 # \WINDOWS;C: could not be stat'd.
 # \Program Files (x86)\p-nand-q.com\GTools;C: could not be stat'd.
 # \Program Files (x86)\ProAKT\;C: could not be stat'd.
-# \users\jacob\flutter\bin;C: could not be stat'd.
+# \users\jacob\flutter\bin;C: could not 
+ be stat'd.
 # \Users\jacob\AppData\Roaming\cabal\bin;C: could not be stat'd.
 
-# 13 files, no impossibilities in 41 directories.
+# 12 files, no impossibilities in 41 directories.
 
 # Implicit Rules
 
@@ -374,15 +375,14 @@ b_tree.h:
 
 # Not a target:
 .SUFFIXES:
-#  I 
-mplicit rule search has not been done.
+#  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-01-05 11:22:31
+#  Last modified 2022-01-05 15:18:28
 #  File has been updated.
 #  Successfully updated.
 
@@ -393,7 +393,8 @@ build/test.o: test.c build/b_tree.o b_tree.h common_def.h
 #  recipe to execute (from `Makefile', line 19):
 	$(compile)
 
-build/test: build/test.o build/b_tree.o
+build/test: build/test. 
+o build/b_tree.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -402,7 +403,7 @@ build/test: build/test.o build/b_tree.o
 
 build: prep build/test
 #  Implicit rule search has been done.
-#  Last modified 2022-01-05 11:22:36
+#  File does not exist.
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
@@ -473,13 +474,14 @@ build/array.o: array.c array.h common_def.h
 
 # No general (`VPATH' variable) search path.
 
-# # of strings in strcache: 0 / lookups = 110 / hits = 110
+# # of strings in strcache: 0 / lookups = 109 / hits = 109
 # # of strcache buffers: 1 (* 8176 B/buffer = 8176 B)
 # strcache used: total = 0 (1892) / max = 0 / min = 8176 / avg = 0
 # strcache free: total = 0 (6284) / max = 0 / min = 8176 / avg = 0
 
 # strcache hash-table stats:
-# Load=65/8192=1%, Rehash=0, Collisions=1/110=1%
-# Finished Make data base on Wed Jan 05 11:22:59 2022
+# Load=65/8192=1%, Rehash=0, Collisions=1/109=1%
+# Finished Mak 
+e data base on Wed Jan 05 15:18:42 2022
 
  

@@ -14,17 +14,15 @@ typedef struct node {
 typedef struct b_tree
 {
     NODE *root;
-    int height;
-    int default_key;
-    int capacity;
+    int height;;
 } TREE;
 
 // A. creation and initialization
 void
-create(TREE *self, int min_size_of_key_array, int default_key);
+create_b_tree(TREE *self, int min_size_of_key_array, int default_key);
 
 NODE *
-create_node(TREE *self);
+create_node(int min_size_of_key_array, int default_key);
 
 void 
 init_keys(FS_ARRAY *keys, int capacity, int default_key);
