@@ -1,11 +1,9 @@
-make.exe build/insertion_algorithms.o --dry-run --keep-going --print-directory
+make.exe build/insertion_algorithms.o --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/cygdrive/c/Users/jacob/Projects/2022/trees/b_tree'
+make: Leaving directory '/cygdrive/c/Users/jacob/Projects/2022/trees/b_tree'
  
 make: *** No rule to make target 'insertion_algorithms.c', needed by 'build/insertion_algorithms.o'.
 make: *** No rule to make target 'insertion_algorithms.h', needed by 'build/insertion_algorithms.o'.
 make: *** No rule to make target 'array.h', needed by 'build/insertion_algorithms.o'.
- 
-make: Leaving directory '/cygdrive/c/Users/jacob/Projects/2022/trees/b_tree'
- 
 make: *** No rule to make target 'array.c', needed by 'build/array.o'.
  

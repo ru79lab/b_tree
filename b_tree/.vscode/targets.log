@@ -1,20 +1,17 @@
 make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # GNU Make 4.3
- 
 # Built for x86_64-pc-cygwin
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
-# Make data base, printed on Sat Feb 19 20:15:55 2022
+# Make data base, printed on Sat Feb 19 21:41:51 2022
 
 # Variables
 
 # environment
 SYSTEMDRIVE = C:
- 
 # environment
 JAVA_HOME = C:\Program Files\Java\jdk-17.0.1
 # environment
@@ -28,11 +25,11 @@ USERPROFILE = C:\Users\jacob
 # environment
 LOCALAPPDATA = C:\Users\jacob\AppData\Local
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-824f1b01-274f-45b9-b8e6-fd4b7572859a-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-0fbfbc12-cd4d-4aa2-890f-3a42f9d45cf8-sock
 # environment
 WSLENV = WT_SESSION::WT_PROFILE_ID
 # environment
-VSCODE_CWD = C:\Users\jacob\Projects\2022\trees\b_tree
+VSCODE_CWD = C:\Users\jacob\Projects\2022\trees
 # environment
 CHOCOLATEYINSTALL = C:\ProgramData\chocolatey
 # environment
@@ -48,7 +45,7 @@ GOPATH = C:\Users\jacob\go
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_25800_SWGJNSSOPTYWRRUE
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_9324_TSHZCPTTUAYHWVVD
 # environment
 ONEDRIVECOMMERCIAL = C:\Users\jacob\NG Branch Technology GmbH
 # environment
@@ -104,12 +101,11 @@ COMMONPROGRAMW6432 = C:\Program Files\Common Files
 # makefile (from 'Makefile', line 1)
 MAKEFILE_LIST := Makefile
 # automatic
- 
 @F = $(notdir $@)
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 25800
+VSCODE_PID = 9324
 # environment
 NG1_CONFIG = C:\Program Files\NG1 Kiosk\config
 # automatic
@@ -171,7 +167,6 @@ LOGONSERVER = \\DESKTOP-IFJDUPU
 # environment
 VSCODE_LOG_NATIVE = false
 # environment
- 
 NG1_HOME = C:\Program Files\NG1 Kiosk\
 # environment
 USERNAME = jacob
@@ -236,7 +231,6 @@ ELECTRON_RUN_AS_NODE = 1
 # environment
 TEMP = /cygdrive/c/Users/jacob/AppData/Local/Temp
 # environment
- 
 VSCODE_IPC_HOOK = \\.\pipe\ea075160054524950c367df978b0f1f0-1.64.2-main-sock
 # environment
 TERM = xterm-256color
@@ -273,9 +267,9 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 158 Stepping 10, GenuineIntel
 
 # Directories
 
-# . (device 2667282799, inode 41376821576471780): 9 files, no impossibilities.
+# . (device 2667282799, inode 41376821576471780): 8 files, no impossibilities.
 
-# 9 files, no impossibilities in 1 directories.
+# 8 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -294,7 +288,6 @@ execute:
 insertion_algorithms.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
- 
 #  File has not been updated.
 
 build/test.o: test.c build/b_tree.o b_tree.h common_def.h
@@ -375,7 +368,6 @@ build/array.o: array.c array.h common_def.h
 #  Modification time never checked.
 #  File has not been updated.
 
- 
 all: build execute
 #  Command line target.
 #  Implicit rule search has been done.
@@ -420,10 +412,9 @@ prep:
 
 build: prep build/test
 #  Implicit rule search has been done.
-#  Last modified 2022-01-10 20:10:10.5835555
+#  File does not exist.
 #  File has been updated.
 #  Needs to be updated (-q is set).
- 
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/3=0%
 
@@ -463,9 +454,9 @@ cleanBuild: clean build execute
 # strcache buffers: 1 (0) / strings = 28 / storage = 292 B / avg = 10 B
 # current buf: size = 8162 B / used = 292 B / count = 28 / avg = 10 B
 
-# strcache performance: lookups = 68 / hit rate = 58%
+# strcache performance: lookups = 67 / hit rate = 58%
 # hash-table stats:
-# Load=28/8192=0%, Rehash=0, Collisions=0/68=0%
-# Finished Make data base on Sat Feb 19 20:15:55 2022
+# Load=28/8192=0%, Rehash=0, Collisions=0/67=0%
+# Finished Make data base on Sat Feb 19 21:41:51 2022
 
  
