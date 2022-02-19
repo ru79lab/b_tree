@@ -20,23 +20,23 @@ int main(){
     add(&t, 5);
     print_b_tree(&t);
 
-    printf("testing add to root smaller: \n");
+    printf("testing add to root smaller: \n\n");
     add(&t, 4);
     print_b_tree(&t);
 
-    printf("testing add to root equal: \n");
+    printf("testing add to root equal: \n\n");
     add(&t, 4);
     print_b_tree(&t);
 
 
-    printf("testing add to root bigger: \n");
+    printf("testing add to root bigger: \n\n");
 
     add(&t, 7);
     print_b_tree(&t);
 
-    printf("testing add full root: \n");
+    printf("testing add to root smaller: \n\n");
 
-    add(&t, 7);
+    add(&t, 2);
     print_b_tree(&t);
 
     destroy(&t);

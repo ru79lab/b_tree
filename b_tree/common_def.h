@@ -7,7 +7,7 @@
 #include <stdbool.h> 
 
 #ifndef DEBUG_BUILD
-    #define _DEBUG(fmt, args...) printf("[ %s %s %d ] "fmt, __FILE__, __FUNCTION__, __LINE__, args) 
+    #define _DEBUG(fmt, ...) printf("[ %s %s %d ] " fmt "\n" , __FILE__, __FUNCTION__, __LINE__, __VA_ARGS__) 
 #else 
     #define _DEBUG(...)
 #endif

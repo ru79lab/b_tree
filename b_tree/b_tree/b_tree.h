@@ -7,8 +7,9 @@
 
 typedef struct node {
     FS_ARRAY keys;
-    struct node *left;
-    struct node *right;
+    struct node *parent;
+    struct node **children;
+    int n_children;
 } NODE;
 
 typedef struct b_tree
@@ -22,7 +23,7 @@ void
 create_b_tree(TREE *self, int min_size_of_key_array, int default_key);
 
 NODE *
-create_node(int min_size_of_key_array, int default_key);
+create_node(int min_size_of_key_array, int default_key, NODE *parent);
 
 void 
 init_keys(FS_ARRAY *keys, int capacity, int default_key);
@@ -31,7 +32,7 @@ init_keys(FS_ARRAY *keys, int capacity, int default_key);
 void
 add(TREE *self, int key);
 
-void 
+int 
 node_add(FS_ARRAY *target, int key, int (*algorithm)(FS_ARRAY *t, int k, int start, int end));
 /******************************************************************************************************************************/
 // C. cleaning
