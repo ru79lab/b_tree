@@ -21,11 +21,14 @@ range_check(FS_ARRAY *self, int start, int end);
 bool
 check_not_full(FS_ARRAY *self);
 
+bool
+check_not_empty(FS_ARRAY *self);
+
 
 int  
 create_array(FS_ARRAY *self, int capacity, int default_key) {
     if (capacity <= 0) 
-        return 0;
+        return NEGATIVE_CAPACITY;
 
     self->data = malloc(sizeof(int) * capacity);
     if (self->data == NULL) 
@@ -35,12 +38,29 @@ create_array(FS_ARRAY *self, int capacity, int default_key) {
     self->capacity = capacity;
     self->default_key = default_key;
 
-    for (int i = 0;  i < capacity; i++){
+    for (int i = 0;  i < capacity; i++)
         self->data[i] = default_key;
-    }
+    
 
     return 1;
 }
+
+int 
+array_copy(FS_ARRAY *self, FS_ARRAY *to) {
+    int c = create_array(to, self->capacity, self->default_key);
+
+    if (c != SUCCESS)
+        return c;
+
+    int filled = self->filled;
+    to->filled = filled; 
+
+    for (int i = 0;  i < filled; i++)
+        to->data[i] = self->data[i];
+
+    return SUCCESS;
+}
+
 
 int 
 array_insert(FS_ARRAY *self, int elem, int at){
@@ -58,7 +78,6 @@ array_insert(FS_ARRAY *self, int elem, int at){
 
     else 
         return move_and_insert(self, elem, at);
-
 }
 
 int
@@ -105,7 +124,7 @@ move_and_insert(FS_ARRAY *self, int elem, int at){
 }
 
 int
-delete_at(FS_ARRAY *self, int at) {
+array_delete_at(FS_ARRAY *self, int at) {
     _DEBUG("removing elem at %d", at);
 
     if (! check_init(self))
@@ -115,12 +134,17 @@ delete_at(FS_ARRAY *self, int at) {
         return INDEX_OUT_OF_BOUNDS;
     } 
 
-    for (int i = self->filled; i >= at; i--) {
-        if (i + 1 == self->capacity)
-            self->data[i] = 0;
+    if(! check_not_empty(self))
+        return EMPTY;
+
+    for (int i = at; i < self->filled; i++) {
+        if (i + 1 == self->filled)
+            self->data[i] = self->default_key;
         else 
             self->data[i] = self->data[i + 1];
     }
+
+    self->filled -= 1;
 
     return SUCCESS;
 }
@@ -142,8 +166,36 @@ copy_range(FS_ARRAY *to, FS_ARRAY *from, int start, int end){
     return SUCCESS;
 }
 
+bool 
+array_equals(FS_ARRAY *self, FS_ARRAY *other) {
+    if (NULL == self || NULL == other) 
+        return false;
+ 
+    if (NULL == self->data) 
+        return false;
+
+    if (NULL == other->data) 
+        return false;
+
+    if (self->capacity != other->capacity)
+        return false;
+
+    if (self->filled != other->filled)
+        return false;
+
+    if (self->default_key != other->default_key)
+        return false;
+
+    for (int i = 0; i < self->filled; i++) {
+        if(self->data[i] != other->data[i])
+            return false;
+    }
+
+    return true;
+}
+
 void 
-clean_array(FS_ARRAY *self) {
+array_clean(FS_ARRAY *self) {
     free(self->data);
 }
 
@@ -220,6 +272,16 @@ bool
 check_not_full(FS_ARRAY *self) {
     if (self->filled == self->capacity) {
         _DEBUG("WARNING: fs_array %p is full", self);
+        return 0;
+    }
+
+    return 1;
+}
+
+bool
+check_not_empty(FS_ARRAY *self) {
+    if(self->filled == 0) {
+        _DEBUG("WARNING: fs_array %p is empty", self);
         return 0;
     }
 
