@@ -5,6 +5,8 @@
 
 static FS_ARRAY a;
 
+void prepare_array(void);
+
 int
 init_suite_1(void) {
     create_array(&a, 4, -1);
@@ -66,6 +68,41 @@ test_insert (void) {
     CU_ASSERT(check2 == FULL);
 }
 
+void 
+test_replace(void) {
+    prepare_array();
+
+    int old_filled = a.filled;
+    int replace_at = 0, replace_with = 10;
+
+    array_replace(&a, replace_at, replace_with);
+
+    CU_ASSERT(a.data[replace_at] == replace_with);
+    CU_ASSERT(a.filled == old_filled);
+}
+
+void 
+test_replace_at_OUT_OF_BOUNDS(void) {
+    prepare_array();
+
+    int old_filled = a.filled;
+    int replace_at = old_filled + 1, replace_with = 10;
+    int old_value_at = a.data[replace_at];
+
+    int check = array_replace(&a, replace_at, replace_with);
+
+    CU_ASSERT(check == INDEX_OUT_OF_BOUNDS);
+    CU_ASSERT(a.data[replace_at] == old_value_at);
+    CU_ASSERT(a.filled == old_filled);
+} 
+
+void prepare_array(void) {
+    array_insert(&a, 3, 0);
+    array_insert(&a, 2, 1);
+    array_insert(&a, 1, 1);
+    array_insert(&a, 4, 0);
+}
+
 
 int 
 main(){
@@ -83,8 +120,12 @@ main(){
     }
 
     /* add tests to the suite */
-     if ((NULL == CU_add_test(pSuite, "test of array_create", &test_create)) ||
-       (NULL == CU_add_test(pSuite, "test of array_insert", &test_insert))) {
+     if (
+         (NULL == CU_add_test(pSuite, "test of array_create", &test_create)) ||
+         (NULL == CU_add_test(pSuite, "test of array_insert", &test_insert)) ||
+         (NULL == CU_add_test(pSuite, "test of array_replace", &test_replace))||
+         (NULL == CU_add_test(pSuite, "test of test_replace_at_OUT_OF_BOUNDS", &test_replace_at_OUT_OF_BOUNDS))
+        ) {
       CU_cleanup_registry();
       return CU_get_error();
     }

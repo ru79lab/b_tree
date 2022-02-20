@@ -63,25 +63,31 @@ array_insert(FS_ARRAY *self, int elem, int at){
 
 int
 array_replace(FS_ARRAY *self, int at, int with){
-    self->filled = - 1;
+    if (!check_init(self))
+        return UNINITIALIZED;
+
+    if(!check_bounds(self, at))
+        return INDEX_OUT_OF_BOUNDS;
+
+    self->filled -= 1;
     return insert(self, with, at);
 }
 
 
 int 
 insert(FS_ARRAY *self, int elem, int at){
-    printf("array before insert: \n");
+    /*printf("array before insert: \n");
     debug_array(self);
-    printf("\n");
+    printf("\n");*/
 
     _DEBUG("insert data: {elem: %i, at: %d}\n", elem, at);
 
     self->data[at] = elem;
     self->filled += 1;
 
-    printf("array after insert: \n");
+    /*printf("array after insert: \n");
     debug_array(self);
-    printf("\n");
+    printf("\n");*/
     return 1;
 }
 

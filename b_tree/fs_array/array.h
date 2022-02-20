@@ -34,7 +34,7 @@ create_array(FS_ARRAY *self, int capacity, int default_key);
 int 
 array_insert(FS_ARRAY *self, int elem, int at);
 /* 
-    Returns : 1 <==> check_init(self) AND check_bounds(self) AND check_not_full(self)
+    Returns : 1 <==> check_init(self) AND check_bounds(self, at) AND check_not_full(self)
               0 <==> NOT(check_init(self) OR check_bounds(self) OR check_not_full(self))
     Requires: check_init(self) AND check_bounds(self) AND check_not_full(self)
     Ensures : self->filled == OLD(self->filled) + 1 AND   
@@ -45,6 +45,14 @@ array_insert(FS_ARRAY *self, int elem, int at);
 
 int
 array_replace(FS_ARRAY *self, int at, int with);
+/*
+    Returns : 1                   <==> check_init(self) AND check_bounds(self, at)
+              UNINITIALIZED       <==> NOT(check_init(self))
+              INDEX_OUT_OF_BOUNDS <==> NOT(check_bounds(self, at) 
+    Requires: check_init(self) AND check_bounds(self, at)
+    Ensures : self->data[at] == with AND
+              self->filled   == OLD(self->filled)  
+*/
 
 int
 delete_at(FS_ARRAY *self, int at);
