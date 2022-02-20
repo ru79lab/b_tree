@@ -6,6 +6,8 @@
 #include <stdlib.h>
 #include <stdbool.h> 
 
+//#define DEBUG_BUILD
+
 #ifndef DEBUG_BUILD
     #define _DEBUG(fmt, ...) printf("[ %s %s %d ] " fmt "\n" , __FILE__, __FUNCTION__, __LINE__, __VA_ARGS__) 
 #else 
