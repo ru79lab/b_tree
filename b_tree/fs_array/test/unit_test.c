@@ -1,6 +1,6 @@
 #include <CUnit/CUnit.h>
 #include <CUnit/Basic.h>
-#include "array.h"
+#include "../src/array.h"
 
 
 static FS_ARRAY a;

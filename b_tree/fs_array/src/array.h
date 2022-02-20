@@ -1,7 +1,7 @@
 #ifndef FIXED_SIZE_ARRAY
 #define FIXED_SIZE_ARRAY
 
-#include "../common_def.h"
+#include "../../common_def.h"
 
 typedef enum array_error{
     UNINITIALIZED       = -2,
