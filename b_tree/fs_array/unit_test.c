@@ -16,7 +16,7 @@ init_suite_1(void) {
 
 int
 clean_suite_1(void) {
-    clean_array(&a);
+    array_clean(&a);
     return 0;
 }
 
@@ -34,6 +34,35 @@ test_create(void) {
     }
 
     CU_ASSERT(check == 1);
+}
+
+void test_array_equals(void) {
+    prepare_array();
+    FS_ARRAY b;
+
+    create_array(&b, a.capacity, a.default_key);
+    b.filled = a.filled;
+    for(int i = 0; i < a.filled; i++)
+        b.data[i] = a.data[i];
+
+    CU_ASSERT(array_equals(&a, &b));
+
+    array_clean(&b);
+}
+
+void 
+test_array_copy(void) {
+    prepare_array();
+
+    FS_ARRAY copy_a;
+    int check = array_copy(&a, &copy_a);
+
+    if(check != SUCCESS) 
+        CU_ASSERT(check == 0 || check == NEGATIVE_CAPACITY);
+
+    CU_ASSERT(array_equals(&a, &copy_a));
+
+    array_clean(&copy_a);
 }
 
 void 
@@ -96,6 +125,52 @@ test_replace_at_OUT_OF_BOUNDS(void) {
     CU_ASSERT(a.filled == old_filled);
 } 
 
+void 
+test_array_delete(void) {
+    prepare_array();
+
+    int old_filled = a.filled;
+    int at = 1;
+
+    FS_ARRAY copy_a;
+    array_copy(&a, &copy_a); 
+    array_delete_at(&a, at);
+
+    CU_ASSERT(a.filled = old_filled - 1);
+
+    for (int i = 0; i < a.filled; i++) {
+        if(i < at) {
+            CU_ASSERT(a.data[i] == copy_a.data[i]);
+        }
+        else {
+            CU_ASSERT(a.data[i] == copy_a.data[i+1]);    
+        }
+    }
+}
+
+void 
+test_array_delete_filled_bound(void) {
+    prepare_array();
+
+    int old_filled = a.filled;
+    int at = old_filled - 1;
+
+    FS_ARRAY copy_a;
+    array_copy(&a, &copy_a); 
+    array_delete_at(&a, at);
+
+    CU_ASSERT(a.filled = old_filled - 1);
+
+    for (int i = 0; i < a.filled; i++) {
+        if(i < at) {
+            CU_ASSERT(a.data[i] == copy_a.data[i]);
+        }
+        else {
+            CU_ASSERT(a.data[i] == copy_a.default_key);    
+        }
+    }
+}
+
 void prepare_array(void) {
     array_insert(&a, 3, 0);
     array_insert(&a, 2, 1);
@@ -124,7 +199,11 @@ main(){
          (NULL == CU_add_test(pSuite, "test of array_create", &test_create)) ||
          (NULL == CU_add_test(pSuite, "test of array_insert", &test_insert)) ||
          (NULL == CU_add_test(pSuite, "test of array_replace", &test_replace))||
-         (NULL == CU_add_test(pSuite, "test of test_replace_at_OUT_OF_BOUNDS", &test_replace_at_OUT_OF_BOUNDS))
+         (NULL == CU_add_test(pSuite, "test of test_replace_at_OUT_OF_BOUNDS", &test_replace_at_OUT_OF_BOUNDS)) ||
+         (NULL == CU_add_test(pSuite, "test of test_array_equals", &test_array_equals)) || 
+         (NULL == CU_add_test(pSuite, "test of test_array_copy", &test_array_copy)) ||
+         (NULL == CU_add_test(pSuite, "test of test_array_delete", &test_array_delete)) ||
+         (NULL == CU_add_test(pSuite, "test of test_array_delete_filled_bound", &test_array_delete_filled_bound)) 
         ) {
       CU_cleanup_registry();
       return CU_get_error();
